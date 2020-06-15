@@ -1,6 +1,7 @@
 const express = require("express")
 const server = express()
 const db = require("./database/db.js")
+const cors = require("cors")
 
 //configurar pasta publica
 server.use(express.static("public"))
@@ -86,7 +87,5 @@ server.get("/search", (req, res) => {
           return res.render("search-results.html", { places: rows, total: total })
    })  
  })
-
-
 
 server.listen(3000)
